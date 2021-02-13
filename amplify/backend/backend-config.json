@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "tcarramplifyvuejs83853cd0": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
