@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "tcarramplifyvuejs",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtcarramplifyvuejs83853cd0",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

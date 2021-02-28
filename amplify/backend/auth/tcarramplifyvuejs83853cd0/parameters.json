@@ -1,6 +1,6 @@
 {
     "identityPoolName": "tcarramplifyvuejs83853cd0_identitypool_83853cd0",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "tcarra83853cd0",
     "userPoolName": "tcarramplifyvuejs83853cd0_userpool_83853cd0",
     "autoVerifiedAttributes": [

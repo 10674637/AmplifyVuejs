@@ -1,0 +1,47 @@
+type Album 
+@model 
+@auth(rules: [{allow: owner}])
+
+{
+  id: ID!
+  owner: ID!
+  ownerId: String!
+  name: String!
+  createdAt: String
+  updatedAt: String
+  photos: [photo] @connection(name: "tcarramplifyvuejs", sortField: "createdAt")
+  description: String
+}
+
+type photo
+@model
+@auth(
+  rules: [
+    {allow: owner},
+    {allow: private, provider: iam, operations: [read, update]}
+  ]
+)
+{
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  album: Album @connection(name: "tcarramplifyvuejs", sortField: "createdAt")
+  fullsize: S3Object!
+  thumbnail: S3Object
+  contentType: String
+  gps: GPS 
+  height: Int
+  width: Int
+}
+
+type S3Object @aws_iam @aws_cognito_user_pools{
+  region: String!
+  bucket: String!
+  key: String!
+}
+
+type GPS {
+  latitude: String!
+  longtitude: String!
+  altitude: Float!
+}
